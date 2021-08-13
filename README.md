@@ -1,6 +1,6 @@
-# Flask React Project
+# Chatterbox
 
-This is the starter for the Flask React project.
+A Discord inspired web app where users can create, join, and delete chat servers and channels.
 
 ## Getting started
 
