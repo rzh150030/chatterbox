@@ -8,3 +8,4 @@ class Channel(db.Model):
     server_id = db.Column(db.Integer, db.ForeignKey("servers.id", ondelete="CASCADE"), nullable=False)
 
     server = db.relationship("Server", back_populates="channels")
+    messages = db.relationship("Message", cascade="all, delete", passive_deletes=True, back_populates="channel")
