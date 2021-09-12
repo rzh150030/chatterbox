@@ -5,4 +5,6 @@ class Channel(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
-    server_id = db.Column(db.Integer, db.ForeignKey("servers.id"), nullable=False)
+    server_id = db.Column(db.Integer, db.ForeignKey("servers.id", ondelete="CASCADE"), nullable=False)
+
+    server = db.relationship("Server", back_populates="channels")
