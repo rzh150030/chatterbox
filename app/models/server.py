@@ -7,3 +7,5 @@ class Server(db.Model):
     name = db.Column(db.String(50), nullable=False)
     topic = db.Column(db.String(500), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+
+    channels = db.relationship("Channel", cascade="all, delete", passive_deletes=True, back_populates="server")
