@@ -10,3 +10,4 @@ class Message(db.Model):
     created_at = db.Column(db.DateTime, nullable=False)
 
     channel = db.relationship("Channel", back_populates="messages")
+    user = db.relationship("User", back_populates="messages")
